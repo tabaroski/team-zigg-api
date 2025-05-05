@@ -24,9 +24,9 @@ app.get("/clan", async (req, res) => {
   }
 });
 
-app.get("/currentwar", async (req, res) => {
+app.get("/warleague", async (req, res) => {
     try {
-        const response = await fetch(`https://api.clashofclans.com/v1/clans/${CLAN_TAG}/currentwar`, {
+        const response = await fetch(`https://api.clashofclans.com/v1/clans/${CLAN_TAG}/warleagues`, {
             headers: {
                 Authorization: `Bearer ${API_TOKEN}`,
                 "Content-Type": "application/json"
@@ -36,7 +36,7 @@ app.get("/currentwar", async (req, res) => {
         const data = await response.json();
         res.json(data);
     } catch (err) {
-        res.status(500).json({ error: "Erro ao buscar dados da guerra atual." });
+        res.status(500).json({ error: "Erro ao buscar dados da liga de guerras." });
     }
 });
 
