@@ -72,7 +72,7 @@ app.get("/leaguegroup", async (req, res) => {
 app.get("/leaguewar/:id", async (req, res) => {
     const warId = req.params.id;
     try {
-        const response = await fetch(`https://api.clashofclans.com/v1/clanwarleagues/${warId}`, { headers: HEADERS });
+        const response = await fetch(`https://api.clashofclans.com/v1/clanwarleagues/wars/${warId}`, { headers: HEADERS });
         const data = await response.json();
         res.json(data);
     } catch (err) {
