@@ -70,8 +70,7 @@ app.get("/leaguegroup", async (req, res) => {
 
 // 📊 Detalhes de uma guerra da liga (por ID)
 app.get("/leaguewar/:id", async (req, res) => {
-    const rawId = req.params.id;
-    const warId = rawId.replace(/^#|^%23/, "");  // remove # ou %23 do início
+    const warId = req.params.id;
     try {
         const response = await fetch(`https://api.clashofclans.com/v1/clanwarleagues/wars/${warId}`, { headers: HEADERS });
         const data = await response.json();
